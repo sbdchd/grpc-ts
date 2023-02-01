@@ -1,5 +1,6 @@
 import { isFunction, isObject, isPresent, isString, isText } from '@whisklabs/typeguards';
-import XMLHttpRequest from 'xhr2';
+// @ts-expect-error missing typings
+import xhr2 from 'xhr2';
 
 import { Decode, Encode } from '../binary';
 import { Field, FieldGet, Service, ServiceRequest, ServiceResponse } from '../types';
@@ -46,7 +47,8 @@ export const grpcHTTP = <Meta = unknown>({
     }
 
     const method = `${server}/${field.name}`;
-    const xhr = new XMLHttpRequest();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    const xhr = new xhr2() as XMLHttpRequest;
 
     xhr.timeout = timeout ?? timeoutConfig ?? 0;
 
