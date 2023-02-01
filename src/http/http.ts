@@ -1,4 +1,5 @@
 import { isFunction, isObject, isPresent, isString, isText } from '@whisklabs/typeguards';
+import XMLHttpRequest from 'xhr2';
 
 import { Decode, Encode } from '../binary';
 import { Field, FieldGet, Service, ServiceRequest, ServiceResponse } from '../types';

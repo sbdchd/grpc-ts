@@ -4,3 +4,4 @@ node_modules/
 !/**/.gitkeep
 coverage/
 /tests/generator/result
+build/
